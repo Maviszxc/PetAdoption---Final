@@ -12,3 +12,7 @@ def home(request):
 def shop(request):
 
     return render(request, 'home/shop.html')
+
+def pet(request):
+
+    return render(request, 'home/pet.html')
