@@ -35,6 +35,9 @@ app.use("/api/v1/pets", petRoute);
 const shopRoute = require("./routes/shopRoute");
 app.use("/api/v1/items", shopRoute);
 
+const loginRoute = require("./routes/loginRoute");
+app.use("/api/v1/login", loginRoute);
+
 
 app.listen(portNumber, () => {
   console.log(`server is running on http://localhost:${portNumber}`);

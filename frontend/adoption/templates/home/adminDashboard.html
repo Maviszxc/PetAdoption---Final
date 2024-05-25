@@ -10,7 +10,7 @@
     <!-- 
     - primary meta tag
   -->
-    <title>Shop - Hight Quality Pet Food</title>
+    <title>Kitter - Hight Quality Pet Food</title>
     <meta name="title" content="Kitter - Hight Quality Pet Food" />
     <meta
       name="description"
@@ -29,7 +29,7 @@
     <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="{% static 'home/css/pet.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/adminDashboard.css' %}" />
 
     <!-- 
     - google font link
@@ -75,28 +75,45 @@
           ></ion-icon>
         </button>
 
-        <a href="#" class="logo">Kitter</a>
+        <a href="#" class="logo">Admin</a>
 
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="{% url 'home' %}" class="navbar-link" data-nav-link>Home</a>
+              <a href="#home" class="navbar-link" data-nav-link>Dashboard</a>
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link>Shop</a>
+              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link
+                >Shop</a
+              >
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'pet' %}" class="navbar-link" data-nav-link>Pets</a>
+              <a href="{% url 'pet' %}" class="navbar-link" data-nav-link
+                >Pets</a
+              >
             </li>
 
             <li class="navbar-item">
-              <a href="#" class="navbar-link" data-nav-link>Book</a>
+              <a href="" class="navbar-link" data-nav-link
+                >Book</a
+              >
             </li>
+
+
+            <li class="navbar-item">
+              <a href="{% url 'edit' %}" class="navbar-link" data-nav-link>Edit</a>
+            </li>
+
+
+          </ul>
 
             
-          </ul>
+
+            
+
+          
 
           <a href="#" class="navbar-action-btn">Log In</a>
         </nav>
@@ -130,276 +147,65 @@
       </div>
     </header>
 
-        
-          <!-- Shop -->
+    <main>
+      <article>
 
-          <div>
-            <h2 class="h2 section-title">
-              <span class="span">Pets</span> 
-            </h2>
-          </div>
+        <!-- 
+        - #HERO
+      -->
 
+        <!-- <section
+          class="section hero has-bg-image"
+          id="home"
+          aria-label="home"
+          style="background-image: url('static/home/images/hero-banner.jpg')"
+        >
+          <div class="container">
+            <h1 class="h1 hero-title">
+              <span class="span">High Quality</span> Pet Food
+            </h1>
+
+            <p class="hero-text">Sale up to 40% off today</p>
+
+            <a href="#" class="btn">Shop Now</a>
+          </div> -->
+        </section>
 
         <!-- Fetch Pets -->
 
-        <div>
-          <div id="search-display" class="grid-list"></div>
+        <!-- <div>
           <div id="pet-list" class="grid-list"></div>
-        </div>
+        </div> -->
 
         <!-- Search Pets -->
 
-        
-          <!-- <div>
-            <div id="search-display" class="grid-list"></div>
-          </div> -->
+        <div>
+          <div id="search-display" class="grid-list"></div>
+        </div>
 
-        
-    
-        <!-- 
-        - #SERVICE
-      -->
-
-        <section class="section service" aria-label="service">
-          <div class="container">
-            <img
-              src="{% static 'home/images/service-image.png' %}"
-              width="122"
-              height="136"
-              loading="lazy"
-              alt=""
-              class="img"
-            />
-
-            <h2 class="h2 section-title">
-              <span class="span">What your pet needs,</span> when they need it.
-            </h2>
-
-            <ul class="grid-list">
-              <li>
-                <div class="service-card">
-                  <figure class="card-icon">
-                    <img
-                      src="{% static 'home/images/service-icon-1.png' %}"
-                      width="70"
-                      height="70"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </figure>
-
-                  <h3 class="h3 card-title">Free Same-Day Delivery</h3>
-
-                  <p class="card-text">
-                    Order by 2pm local time to get free delivery on orders $35+
-                    today.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card">
-                  <figure class="card-icon">
-                    <img
-                      src="{% static 'home/images/service-icon-2.png' %}"
-                      width="70"
-                      height="70"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </figure>
-
-                  <h3 class="h3 card-title">30 Day Return</h3>
-
-                  <p class="card-text">
-                    35% off your first order plus 5% off all future orders.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card">
-                  <figure class="card-icon">
-                    <img
-                      src="{% static 'home/images/service-icon-3.png' %}"
-                      width="70"
-                      height="70"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </figure>
-
-                  <h3 class="h3 card-title">Security payment</h3>
-
-                  <p class="card-text">
-                    25% off your online order of $50+. Available at most
-                    locations.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div class="service-card">
-                  <figure class="card-icon">
-                    <img
-                      src="{% static 'home/images/service-icon-4.png' %}"
-                      width="70"
-                      height="70"
-                      loading="lazy"
-                      alt="service icon"
-                    />
-                  </figure>
-
-                  <h3 class="h3 card-title">24/7 Support</h3>
-
-                  <p class="card-text">
-                    Shop online to get orders over $35 shipped fast and free.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- 
-        - #CTA
-      -->
-
-        <section
-          class="cta has-bg-image"
-          aria-label="cta"
-          style="background-image: url('static/home/images/cta-bg.jpg')"
-        >
-          <div class="container">
-            <figure class="cta-banner">
-              <img
-                src="{% static 'home/images/cta-banner.png' %}"
-                width="900"
-                height="660"
-                loading="lazy"
-                alt="cat"
-                class="w-100"
-              />
-            </figure>
-
-            <div class="cta-content">
-              <img
-                src="{% static 'home/images/cta-icon.png' %}"
-                width="120"
-                height="35"
-                loading="lazy"
-                alt="taste guarantee"
-                class="img"
-              />
-
-              <h2 class="h2 section-title">
-                Taste it, love it or we’ll replace it… Guaranteed!
-              </h2>
-
-              <p class="section-text">
-                At Petio, we believe your dog and cat will love their food so
-                much that if they don’t … we’ll help you find a replacement.
-                That’s our taste guarantee.
-              </p>
-
-              <a href="#" class="btn">Find out more</a>
-            </div>
-          </div>
-        </section>
+       
 
         <!-- 
         - #BRAND
       -->
 
+      <!-- Weekly Sales -->
+
         <section class="section brand" aria-label="brand">
           <div class="container">
             <h2 class="h2 section-title">
-              <span class="span">Popular</span> Brands
+              <span class="span">Shop's</span> Weekly Sales
             </h2>
 
-            <ul class="has-scrollbar">
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-1.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
+      <!-- Bookings -->
 
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-2.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
+      <section class="section brand" aria-label="brand">
+          <div class="container">
+            <h2 class="h2 section-title">
+              <span class="span">All</span> Bookings
+            </h2>
 
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-3.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-4.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-5.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
+            
       </article>
     </main>
 

@@ -84,7 +84,9 @@
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link>Shop</a>
+              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link
+                >Shop</a
+              >
             </li>
 
             <li class="navbar-item">
@@ -96,8 +98,6 @@
             <li class="navbar-item">
               <a href="#" class="navbar-link" data-nav-link>Book</a>
             </li>
-
-            
           </ul>
 
           <a href="#" class="navbar-action-btn">Log In</a>
@@ -119,9 +119,9 @@
             </div>
           </div>
 
-          <button class="action-btn user" aria-label="User">
+          <a href="{% url 'login' %}" class="action-btn user" aria-label="User">
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          </button>
+          </a>
 
           <button class="action-btn" aria-label="cart">
             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
@@ -154,7 +154,6 @@
             <a href="#" class="btn">Shop Now</a>
           </div>
         </section>
-
 
         <!-- Fetch Pets -->
 
