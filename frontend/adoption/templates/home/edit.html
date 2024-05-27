@@ -9,9 +9,9 @@
 
     <!-- 
     - primary meta tag
-  -->
-    <title>Kitter - Hight Quality Pet Food</title>
-    <meta name="title" content="Kitter - Hight Quality Pet Food" />
+    -->
+    <title>Kitter - High Quality Pet Food</title>
+    <meta name="title" content="Kitter - High Quality Pet Food" />
     <meta
       name="description"
       content="This is an eCommerce html template made by codewithsadee"
@@ -19,7 +19,7 @@
 
     <!-- 
     - favicon
-  -->
+    -->
     <link
       rel="shortcut icon"
       href="{% static 'favicon.svg' %}"
@@ -28,39 +28,30 @@
 
     <!-- 
     - custom css link
-  -->
+    -->
     <link rel="stylesheet" href="{% static 'home/css/edit.css' %}" />
 
     <!-- 
     - google font link
-  -->
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- 
-    - preload images
-  -->
-    <!-- <link
-      rel="preload"
-      as="image"
-      href="{% static 'home/images/hero-banner.jpg' %}"
-    /> -->
   </head>
 
   <body id="top">
     <!-- 
     - #HEADER
-  -->
+    -->
 
     <header class="header" data-header>
       <div class="container">
         <button
           class="nav-toggle-btn"
-          aria-label="toggle manu"
+          aria-label="toggle menu"
           data-nav-toggler
         >
           <ion-icon
@@ -145,181 +136,168 @@
       <article>
         <!-- 
         - #HERO
-      -->
-
-        <!-- Fetch Pets -->
-
-        <!-- <div>
-          <div id="pet-list" class="grid-list"></div>
-        </div> -->
+        -->
 
         <!-- Search Pets -->
-
         <div>
           <div id="search-display" class="grid-list"></div>
         </div>
 
         <!-- 
         - #BRAND
-      -->
+        -->
 
-        <!-- Weekly Sales -->
-
+        <!-- CRUD for Pets -->
         <section class="section brand" aria-label="brand">
           <div class="container">
             <h2 class="h2 section-title">
               <span class="span">CRUD for</span> Pets
             </h2>
 
-            <!-- HOOO CRUD Pet -->
+            <div class="wrapper-grid">
+              <!-- Add New Pet -->
+              <div class="wrapper">
+                <form id="add-pet-form" enctype="multipart/form-data">
+                  <h1>Add Pet</h1>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="breed"
+                      name="breed"
+                      placeholder="Breed"
+                      required
+                    />
+                    <i class="bx bxs-user"></i>
+                  </div>
 
-            <body>
-              <div class="wrapper-grid">
-                <!-- Add New Pet -->
-                <div class="wrapper">
-                  <form id="add-pet-form" enctype="multipart/form-data">
-                    <h1>Add Pet</h1>
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="breed"
-                        name="breed"
-                        placeholder="Breed"
-                        required
-                      />
-                      <i class="bx bxs-user"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="gender"
+                      name="gender"
+                      placeholder="Gender"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="gender"
-                        name="gender"
-                        placeholder="Gender"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="age"
+                      name="age"
+                      placeholder="Age"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="age"
-                        name="age"
-                        placeholder="Age"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="description"
+                      name="description"
+                      placeholder="Description"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="description"
-                        name="description"
-                        placeholder="Description"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <div class="input-box file-input-box">
+                    <input
+                      type="file"
+                      id="image"
+                      name="image"
+                      accept="image/*"
+                      required
+                    />
+                    <i class="bx bxs-image"></i>
+                  </div>
 
-                    <div class="input-box file-input-box">
-                      <input
-                        type="file"
-                        id="image"
-                        name="image"
-                        accept="image/*"
-                        required
-                      />
-                      <i class="bx bxs-image"></i>
-                    </div>
+                  <button type="submit" class="add-btn">Add New Pet</button>
+                </form>
+                <div id="message" class="message"></div>
+              </div>
 
-                    <button type="submit" class="add-btn">Add New Pet</button>
-                  </form>
-                  <div id="message" class="message"></div>
-                </div>
+              <!-- Update Pet -->
+              <div class="wrapper">
+                <form id="update-pet-form">
+                  <h1>Update Pet</h1>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-pet-id"
+                      name="pet-id"
+                      placeholder="Pet ID"
+                      required
+                    />
+                    <i class="bx bxs-user"></i>
+                  </div>
 
-                <!-- Update Pet -->
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-breed"
+                      name="breed"
+                      placeholder="Breed"
+                      required
+                    />
+                    <i class="bx bxs-user"></i>
+                  </div>
 
-                <div class="wrapper">
-                  <form id="update-pet-form">
-                    <h1>Update Pet</h1>
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="update-pet-id"
-                        name="pet-id"
-                        placeholder="Pet ID"
-                        required
-                      />
-                      <i class="bx bxs-user"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-gender"
+                      name="gender"
+                      placeholder="Gender"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="update-breed"
-                        name="breed"
-                        placeholder="Breed"
-                        required
-                      />
-                      <i class="bx bxs-user"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-age"
+                      name="age"
+                      placeholder="Age"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="update-gender"
-                        name="gender"
-                        placeholder="Gender"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-description"
+                      name="description"
+                      placeholder="Description"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="update-age"
-                        name="age"
-                        placeholder="Age"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <div class="input-box checkbox-wrapper">
+                    <label for="update-is-adopted">Is Adopted:</label>
+                    <input
+                      type="checkbox"
+                      id="update-is-adopted"
+                      name="is-adopted"
+                    />
+                  </div>
 
-                    <div class="input-box">
-                      <input
-                        type="text"
-                        id="update-description"
-                        name="description"
-                        placeholder="Description"
-                        required
-                      />
-                      <i class="bx bxs-lock-alt"></i>
-                    </div>
+                  <button type="submit" class="add-btn">Update Pet</button>
+                </form>
+                <div id="update-message" class="message"></div>
+              </div>
 
-                    <div class="input-box checkbox-wrapper">
-                      <label for="update-is-adopted">Is Adopted:</label>
-                      <input
-                        type="checkbox"
-                        id="update-is-adopted"
-                        name="is-adopted"
-                      />
-                    </div>
-
-                    <button type="submit" class="add-btn">Update Pet</button>
-                  </form>
-                  <div id="update-message" class="message"></div>
-                </div>
-
-                <!-- Delete Pet -->
-
-                <div class="wrapper delete-pet-form">
+              <!-- Delete Pet -->
+              <div class="wrapper">
+                <div class="delete-pet-form">
                   <h1>Delete Pet</h1>
                   <form id="delete-pet-form">
                     <div class="input-box">
-                      
                       <input
                         type="text"
                         id="delete-pet-id"
@@ -334,130 +312,170 @@
                   <div id="delete-message" class="message"></div>
                 </div>
               </div>
-            </body>
+            </div>
+          </div>
+        </section>
 
-            <!-- CRUD Shop -->
+        <!-- CRUD for Shop -->
+        <section class="section brand" aria-label="brand">
+          <div class="container">
+            <h2 class="h2 section-title">
+              <span class="span">CRUD for</span> Shop
+            </h2>
 
-            <section class="section brand" aria-label="brand">
-              <div class="container">
-                <h2 class="h2 section-title">
-                  <span class="span">CRUD for</span> Shop
-                </h2>
-
-                <body>
-
-                  <!-- Add Item -->
-
-                  <div class="wrapper-grid">
-                    <div class="wrapper">
-                      <form action="">
-                        <h1>Add Item</h1>
-                        <div class="input-box">
-                          <input type="text" placeholder="Item" required />
-                          <i class="bx bxs-user"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input
-                            type="text"
-                            placeholder="Description"
-                            required
-                          />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Type" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Cost" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Quantity" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box file-input-box">
-                          <input
-                            type="file"
-                            placeholder="Upload Image"
-                            required
-                          />
-                          <i class="bx bxs-image"></i>
-                        </div>
-
-                        <button type="submit" class="add-btn">Submit</button>
-                      </form>
-                    </div>
-
-                    <div class="wrapper">
-                      <form action="">
-
-                        <!-- Update Item -->
-
-
-                        <h1>Update Item</h1>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Item ID" required />
-                          <i class="bx bxs-user"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Item" required />
-                          <i class="bx bxs-user"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input
-                            type="text"
-                            placeholder="Description"
-                            required
-                          />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Type" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Cost" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Quantity" required />
-                          <i class="bx bxs-lock-alt"></i>
-                        </div>
-
-                        <button type="submit" class="add-btn">Submit</button>
-                      </form>
-                    </div>
-
-                    <!-- Delete Item -->
-
-                    <div class="wrapper">
-                      <form action="">
-                        <h1>Delete Item</h1>
-
-                        <div class="input-box">
-                          <input type="text" placeholder="Item ID" required />
-                          <i class="bx bxs-user"></i>
-                        </div>
-
-                        <button type="submit" class="add-btn">Submit</button>
-                      </form>
-                    </div>
+            <div class="wrapper-grid">
+              <!-- Add Item -->
+              <div class="wrapper">
+                <form action="">
+                  <h1>Add Item</h1>
+                  <div class="input-box">
+                    <input type="text" placeholder="Item" required />
+                    <i class="bx bxs-user"></i>
                   </div>
-                </body>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Description" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Type" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Cost" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Quantity" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box file-input-box">
+                    <input type="file" placeholder="Upload Image" required />
+                    <i class="bx bxs-image"></i>
+                  </div>
+
+                  <button type="submit" class="add-btn">Submit</button>
+                </form>
               </div>
-            </section>
+
+              <!-- Update Item -->
+              <div class="wrapper">
+                <form action="">
+                  <h1>Update Item</h1>
+                  <div class="input-box">
+                    <input type="text" placeholder="Item ID" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Item" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Description" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Type" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Cost" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Quantity" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <button type="submit" class="add-btn">Submit</button>
+                </form>
+              </div>
+
+              <!-- Delete Item -->
+              <div class="wrapper">
+                <form action="">
+                  <h1>Delete Item</h1>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Item ID" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <button type="submit" class="add-btn">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CRUD for Booking -->
+        <section class="section brand" aria-label="brand">
+          <div class="container">
+            <h2 class="h2 section-title">
+              <span class="span">CRUD for</span> Booking
+            </h2>
+
+            <div class="wrapper-grid">
+              <div class="wrapper">
+                <form action="">
+                  <h1>Update Item</h1>
+                  <div class="input-box">
+                    <input type="text" placeholder="Item ID" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Item" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Description" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Type" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Cost" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Quantity" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+
+                  <button type="submit" class="add-btn">Submit</button>
+                </form>
+              </div>
+
+              <!-- Delete Item -->
+              <div class="wrapper">
+                <form action="">
+                  <h1>Delete Item</h1>
+
+                  <div class="input-box">
+                    <input type="text" placeholder="Item ID" required />
+                    <i class="bx bxs-user"></i>
+                  </div>
+
+                  <button type="submit" class="add-btn">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
       </article>
@@ -465,11 +483,11 @@
 
     <!-- 
     - #FOOTER
-  -->
+    -->
 
     <footer
       class="footer"
-      style="background-image: url('static/home/images/footer-bg.jpg')"
+      style="background-image: url('{% static 'home/images/footer-bg.jpg' %}')"
     >
       <div class="footer-top section">
         <div class="container">
@@ -641,7 +659,7 @@
 
     <!-- 
     - #BACK TO TOP
-  -->
+    -->
 
     <a
       href="#top"
@@ -654,7 +672,7 @@
 
     <!-- 
     - custom js link
-  -->
+    -->
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
     <script src="{% static 'home/scripts/allPets.js' %}"></script>
@@ -664,7 +682,7 @@
 
     <!-- 
     - ionicon link
-  -->
+    -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
