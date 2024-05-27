@@ -75,27 +75,38 @@
           ></ion-icon>
         </button>
 
-        <a href="#" class="logo">Kitter</a>
+        <a href="#" class="logo">Admin</a>
 
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="{% url 'home' %}" class="navbar-link" data-nav-link>Home</a>
+              <a href="{% url 'adminDashboard' %}" class="navbar-link" data-nav-link>Dashboard</a>
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link>Shop</a>
+              <a href="{% url 'adminShop' %}" class="navbar-link" data-nav-link
+                >Shop</a
+              >
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'pet' %}" class="navbar-link" data-nav-link>Pets</a>
+              <a href="{% url 'adminPet' %}" class="navbar-link" data-nav-link
+                >Pets</a
+              >
             </li>
 
             <li class="navbar-item">
-              <a href="" class="navbar-link" data-nav-link>Book</a>
+              <a href="#" class="navbar-link" data-nav-link
+                >Book</a
+              >
             </li>
 
-            
+
+            <li class="navbar-item">
+              <a href="{% url 'edit' %}" class="navbar-link" data-nav-link>Edit</a>
+            </li>
+
+
           </ul>
 
           <a href="#" class="navbar-action-btn">Log In</a>

@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.querySelector("form");
+  const loginForm = document.getElementById("login-form");
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
-    const username = document.querySelector('input[type="text"]').value;
-    const password = document.querySelector('input[type="password"]').value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
     // Send a POST request to your backend with username and password
     fetch("http://localhost:4000/api/v1/login/admin", {
@@ -22,12 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .then((data) => {
         // Check if login was successful
+        const errorMessage = document.getElementById("error-message");
         if (data.success) {
           // Redirect to adminDashboard if login successful
           window.location.href = "/templates/home/adminDashboard.html";
         } else {
           // Display error message if login failed
-          alert("Username or password is incorrect");
+          errorMessage.textContent = "Incorrect username or password";
         }
       })
       .catch((error) => {

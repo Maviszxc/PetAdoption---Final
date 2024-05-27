@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <p>Age: ${pet.age}</p>
               <p>Description: ${pet.description}</p>
               <p>Adopted: ${pet.isAdopted ? "Yes" : "No"}</p>
+              <img src="${pet.image}" alt="${pet.image}" />
+
             `;
         petList.appendChild(petItem);
       });

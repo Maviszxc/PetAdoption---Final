@@ -30,6 +30,14 @@ def adminDashboard(request):
 
     return render(request, 'home/adminDashboard.html')
 
+def adminShop(request):
+
+    return render(request, 'home/adminShop.html')
+
+def adminPet(request):
+
+    return render(request, 'home/adminPet.html')
+
 def edit(request):
 
     return render(request, 'home/edit.html')

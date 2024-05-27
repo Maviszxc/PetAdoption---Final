@@ -2,202 +2,88 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 
-    - primary meta tag
-  -->
-    <title>Kitter - Hight Quality Pet Food</title>
-    <meta name="title" content="Kitter - Hight Quality Pet Food" />
-    <meta
-      name="description"
-      content="This is an eCommerce html template made by codewithsadee"
-    />
+    <title>Kitter - High Quality Pet Food</title>
+    <meta name="title" content="Kitter - High Quality Pet Food">
+    <meta name="description" content="This is an eCommerce html template made by codewithsadee">
 
-    <!-- 
-    - favicon
-  -->
-    <link
-      rel="shortcut icon"
-      href="{% static 'favicon.svg' %}"
-      type="image/svg+xml"
-    />
+    <link rel="shortcut icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="{% static 'home/css/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="{% static 'home/images/hero-banner.jpg' %}">
+</head>
 
-    <!-- 
-    - #HEADER
-  -->
-
+<body>
     <header class="header" data-header>
-      <div class="container">
-        <button
-          class="nav-toggle-btn"
-          aria-label="toggle manu"
-          data-nav-toggler
-        >
-          <ion-icon
-            name="menu-outline"
-            aria-hidden="true"
-            class="menu-icon"
-          ></ion-icon>
-          <ion-icon
-            name="close-outline"
-            aria-label="true"
-            class="close-icon"
-          ></ion-icon>
-        </button>
-
-        <a href="#" class="logo">Kitter</a>
-
-        <nav class="navbar" data-navbar>
-          <ul class="navbar-list">
-            <li class="navbar-item">
-              <a href="{% url 'home' %}" class="navbar-link" data-nav-link
-                >Home</a
-              >
-            </li>
-
-            <li class="navbar-item">
-              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link
-                >Shop</a
-              >
-            </li>
-
-            <li class="navbar-item">
-              <a href="{% url 'pet' %}" class="navbar-link" data-nav-link
-                >Pets</a
-              >
-            </li>
-
-            <li class="navbar-item">
-              <a href="#" class="navbar-link" data-nav-link>Book</a>
-            </li>
-          </ul>
-
-          <a href="#" class="navbar-action-btn">Log In</a>
-        </nav>
-
-        <div class="header-actions">
-          <button class="action-btn" aria-label="Search">
-            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-          </button>
-          <div class="search-box">
-            <div class="search-container">
-              <input
-                type="text"
-                id="breed-search"
-                placeholder="Search..."
-                class="search-input"
-              />
-              <button id="search-button" class="search-button">Submit</button>
+        <div class="container">
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+                <ion-icon name="close-outline" aria-hidden="true" class="close-icon"></ion-icon>
+            </button>
+            <a href="#" class="logo">Kitter</a>
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li class="navbar-item"><a href="{% url 'home' %}" class="navbar-link" data-nav-link>Home</a></li>
+                    <li class="navbar-item"><a href="{% url 'shop' %}" class="navbar-link" data-nav-link>Shop</a></li>
+                    <li class="navbar-item"><a href="{% url 'pet' %}" class="navbar-link" data-nav-link>Pets</a></li>
+                    <li class="navbar-item"><a href="#" class="navbar-link" data-nav-link>Book</a></li>
+                </ul>
+                <a href="#" class="navbar-action-btn">Log In</a>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn" aria-label="Search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+                <div class="search-box">
+                    <div class="search-container">
+                        <input type="text" id="breed-search" placeholder="Search..." class="search-input">
+                        <button id="search-button" class="search-button">Submit</button>
+                    </div>
+                </div>
+                <button class="action-btn user" aria-label="User">
+                    <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+                </button>
+                <button class="action-btn" aria-label="cart">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge">0</span>
+                </button>
             </div>
-          </div>
-
-          <button class="action-btn user" aria-label="User">
-            <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          </button>
-
-          <button class="action-btn" aria-label="cart">
-            <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-
-            <span class="btn-badge">0</span>
-          </button>
         </div>
-      </div>
     </header>
 
-    <!-- HOOO Tangina LOGIN -->
-
-    <body>
-      <div class="wrapper">
+    <div class="wrapper">
         <form action="">
-          <h1>Admin Login</h1>
-          <div class="input-box">
-            <input type="text" placeholder="Username" required />
-            <i class='bx bxs-user'></i>
-          </div>
-
-          <div class="input-box">
-            <input type="password" placeholder="Password" required />
-            <i class='bx bxs-lock-alt'></i>
-          </div>
-
-          <div class="remember-forgot">
-            <label><input type="checkbox" /> Remember me</label>
-            <a href="{% url 'hint' %}">Forgot password?</a>
-          </div>
-
-          <button type="submit" class="login-btn">Login</button>
+            <h1>Admin Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="{% url 'hint' %}">Forgot password?</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
         </form>
-      </div>
-    </body>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="{% static 'home/css/login.css' %}" />
-
-    <!-- 
-    - google font link
-  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- 
-    - preload images
-  -->
-    <link
-      rel="preload"
-      as="image"
-      href="{% static 'home/images/hero-banner.jpg' %}"
-    />
-  </head>
-
-  <body id="top">
-    <!-- 
-    - custom js link
-  -->
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
     <script src="{% static 'home/scripts/allPets.js' %}"></script>
     <script src="{% static 'home/scripts/login.js' %}"></script>
-
-    <!-- 
-    - ionicon link
-  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
 </html>

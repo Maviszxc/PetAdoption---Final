@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
@@ -19,6 +20,18 @@ const loginSchema = new Schema({
     type: Boolean,
     default: true,
   },
+});
+
+loginSchema.pre("save", function (next) {
+  if (this.isModified("password")) {
+    bcrypt.hash(this.password, 10, (err, hashedPassword) => {
+      if (err) return next(err);
+      this.password = hashedPassword;
+      next();
+    });
+  } else {
+    next();
+  }
 });
 
 const Login = mongoose.model("Login", loginSchema);

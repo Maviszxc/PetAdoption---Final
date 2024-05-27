@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const path = require("path");
+const bodyParser = require("body-parser");
 
 const app = express();
 const portNumber = 4000;
@@ -10,6 +11,7 @@ const portNumber = 4000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json()); 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // DB Connection

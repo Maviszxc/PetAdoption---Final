@@ -912,7 +912,7 @@ body {
   .navbar-action-btn { display: none; }
 
   .header {
-    --color: var(--white);
+    --color: var(--black);
     background: none;
   }
 

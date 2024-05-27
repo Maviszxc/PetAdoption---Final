@@ -3,7 +3,6 @@ const Pet = require("../models/petSchema"); // Ensure the path is correct
 const multer = require("multer");
 const path = require("path");
 
-// Multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadPath = path.join(__dirname, "../uploads/");
@@ -16,16 +15,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Export upload middleware
 module.exports.upload = upload;
 
-// Create Pet Controller
 module.exports.createPet = async (req, res) => {
   try {
     const { breed, gender, age, description } = req.body;
     const imageUrl = req.file ? req.file.path : null;
     if (!imageUrl) {
-      return res.status(400).json({ message: "Image is required" });
+      return res
+        .status(400)
+        .json({ success: false, message: "Image is required" });
     }
 
     const newPet = new Pet({
@@ -38,9 +37,14 @@ module.exports.createPet = async (req, res) => {
     });
 
     const savedPet = await newPet.save();
-    res.status(201).json({ "new pet": savedPet });
+    res.status(201).json({ success: true, pet: savedPet });
   } catch (error) {
-    res.status(500).json({ error: error.message || "Internal Server Error" });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: error.message || "Internal Server Error",
+      });
   }
 };
 
@@ -78,6 +82,16 @@ module.exports.petsByBreed = (req, res) => {
 module.exports.updatePet = (req, res) => {
   const { breed, gender, age, description, isAdopted } = req.body;
   const petId = req.params.id;
+
+  console.log("Received update request for pet:", petId);
+  console.log("Updated fields:", {
+    breed,
+    gender,
+    age,
+    description,
+    isAdopted,
+  });
+
   const updatedFields = { breed, gender, age, description, isAdopted };
 
   Pet.findByIdAndUpdate(petId, updatedFields, { new: true })
@@ -85,11 +99,13 @@ module.exports.updatePet = (req, res) => {
       if (!updatedPet) {
         return res.status(404).json({ error: "Pet not found" });
       }
+      console.log("Pet updated successfully:", updatedPet);
       res.status(200).json(updatedPet);
     })
-    .catch((error) =>
-      res.status(500).json({ error: error.message || "Internal Server Error" })
-    );
+    .catch((error) => {
+      console.error("Error updating pet:", error);
+      res.status(500).json({ error: error.message || "Internal Server Error" });
+    });
 };
 
 module.exports.deletePet = async (req, res) => {

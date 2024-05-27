@@ -89,13 +89,13 @@
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'shop' %}" class="navbar-link" data-nav-link
+              <a href="{% url 'adminShop' %}" class="navbar-link" data-nav-link
                 >Shop</a
               >
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'pet' %}" class="navbar-link" data-nav-link
+              <a href="{% url 'adminPet' %}" class="navbar-link" data-nav-link
                 >Pets</a
               >
             </li>
@@ -105,9 +105,7 @@
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'edit' %}" class="navbar-link" data-nav-link
-                >Edit</a
-              >
+              <a href="#" class="navbar-link" data-nav-link>Edit</a>
             </li>
           </ul>
 
@@ -177,82 +175,163 @@
 
             <body>
               <div class="wrapper-grid">
+                <!-- Add New Pet -->
                 <div class="wrapper">
-                  <form action="">
+                  <form id="add-pet-form" enctype="multipart/form-data">
                     <h1>Add Pet</h1>
                     <div class="input-box">
-                      <input type="text" placeholder="Breed" required />
+                      <input
+                        type="text"
+                        id="breed"
+                        name="breed"
+                        placeholder="Breed"
+                        required
+                      />
                       <i class="bx bxs-user"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Gender" required />
+                      <input
+                        type="text"
+                        id="gender"
+                        name="gender"
+                        placeholder="Gender"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Age" required />
+                      <input
+                        type="text"
+                        id="age"
+                        name="age"
+                        placeholder="Age"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Description" required />
+                      <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        placeholder="Description"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
                     <div class="input-box file-input-box">
-                      <input type="file" placeholder="Upload Image" required />
+                      <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/*"
+                        required
+                      />
                       <i class="bx bxs-image"></i>
                     </div>
 
-                    <button type="submit" class="add-btn">Submit</button>
+                    <button type="submit" class="add-btn">Add New Pet</button>
                   </form>
+                  <div id="message" class="message"></div>
                 </div>
 
+                <!-- Update Pet -->
+
                 <div class="wrapper">
-                  <form action="">
+                  <form id="update-pet-form">
                     <h1>Update Pet</h1>
-
                     <div class="input-box">
-                      <input type="text" placeholder="Pet ID" required />
+                      <input
+                        type="text"
+                        id="update-pet-id"
+                        name="pet-id"
+                        placeholder="Pet ID"
+                        required
+                      />
                       <i class="bx bxs-user"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Breed" required />
+                      <input
+                        type="text"
+                        id="update-breed"
+                        name="breed"
+                        placeholder="Breed"
+                        required
+                      />
                       <i class="bx bxs-user"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Gender" required />
+                      <input
+                        type="text"
+                        id="update-gender"
+                        name="gender"
+                        placeholder="Gender"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Age" required />
+                      <input
+                        type="text"
+                        id="update-age"
+                        name="age"
+                        placeholder="Age"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
                     <div class="input-box">
-                      <input type="text" placeholder="Description" required />
+                      <input
+                        type="text"
+                        id="update-description"
+                        name="description"
+                        placeholder="Description"
+                        required
+                      />
                       <i class="bx bxs-lock-alt"></i>
                     </div>
 
-                    <button type="submit" class="add-btn">Submit</button>
+                    <div class="input-box checkbox-wrapper">
+                      <label for="update-is-adopted">Is Adopted:</label>
+                      <input
+                        type="checkbox"
+                        id="update-is-adopted"
+                        name="is-adopted"
+                      />
+                    </div>
+
+                    <button type="submit" class="add-btn">Update Pet</button>
                   </form>
+                  <div id="update-message" class="message"></div>
                 </div>
 
-                <div class="wrapper">
-                  <form action="">
-                    <h1>Delete Pet</h1>
+                <!-- Delete Pet -->
 
+                <div class="wrapper delete-pet-form">
+                  <h1>Delete Pet</h1>
+                  <form id="delete-pet-form">
                     <div class="input-box">
-                      <input type="text" placeholder="Pet ID" required />
+                      
+                      <input
+                        type="text"
+                        id="delete-pet-id"
+                        name="delete-pet-id"
+                        placeholder="Pet ID"
+                        required
+                      />
                       <i class="bx bxs-user"></i>
                     </div>
-
-                    <button type="submit" class="add-btn">Submit</button>
+                    <button type="submit" class="add-btn">Delete Pet</button>
                   </form>
+                  <div id="delete-message" class="message"></div>
                 </div>
               </div>
             </body>
@@ -264,7 +343,11 @@
                 <h2 class="h2 section-title">
                   <span class="span">CRUD for</span> Shop
                 </h2>
+
                 <body>
+
+                  <!-- Add Item -->
+
                   <div class="wrapper-grid">
                     <div class="wrapper">
                       <form action="">
@@ -313,6 +396,10 @@
 
                     <div class="wrapper">
                       <form action="">
+
+                        <!-- Update Item -->
+
+
                         <h1>Update Item</h1>
 
                         <div class="input-box">
@@ -352,6 +439,8 @@
                         <button type="submit" class="add-btn">Submit</button>
                       </form>
                     </div>
+
+                    <!-- Delete Item -->
 
                     <div class="wrapper">
                       <form action="">
@@ -569,6 +658,9 @@
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
     <script src="{% static 'home/scripts/allPets.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDPets/createPets.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDPets/updatePets.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDPets/deletePets.js' %}"></script>
 
     <!-- 
     - ionicon link

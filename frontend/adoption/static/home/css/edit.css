@@ -1109,7 +1109,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px; /* Adjust the gap value as needed */
-    padding: 10px;
+    padding: 1px;
 }
 
 /* Adjust the wrapper styling for grid items */
@@ -1169,6 +1169,31 @@ body {
     font-size: 16px;
     color: var(--portland-orange);
 }
+
+.input-box.checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+  cursor: pointer;
+  
+}
+
+.message{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .wrapper .remember-forgot {
     display: flex;
@@ -1321,3 +1346,4 @@ body {
   .footer { padding-block-start: 40px; }
 
 }
+
