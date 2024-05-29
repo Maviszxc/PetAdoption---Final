@@ -162,6 +162,47 @@ body {
   background-color: hsl(0, 0%, 70%);
 }
 
+/* hahaha basta */
+
+/*-----------------------------------*\
+  #PET ITEM STYLE
+\*-----------------------------------*/
+
+.shop-item {
+  border: 1px solid var(--silver-chalice);
+  border-radius: var(--radius-10);
+  padding: 16px;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+}
+
+.shop-item h3 {
+  font-size: var (--fs-4);
+  margin-bottom: 8px;
+  color: var (--eerie-black);
+}
+
+.shop-item p {
+  font-size: var (--fs-6);
+  margin: 4px 0;
+  color: var (--sonic-silver);
+}
+
+.shop-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: var (--radius-4);
+}
+
+
+
+
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -282,6 +323,66 @@ body {
 .w-100 {
   width: 100%;
 }
+
+/* basta */
+
+.grid-list {
+  display: grid;
+  gap: 30px;
+  margin-left: 125px;
+  width: 500px;
+  
+}
+
+.shop-item {
+  border: 1px solid var(--silver-chalice);
+  border-radius: var(--radius-10);
+  padding: 16px;
+  width: 300px;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+}
+
+.shop-item h3 {
+  font-size: var(--fs-4);
+  margin-bottom: 8px;
+  color: var(--eerie-black);
+}
+
+.shop-item p {
+  font-size: var(--fs-6);
+  margin: 4px 0;
+  color: var(--sonic-silver);
+}
+
+.shop-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: var(--radius-4);
+}
+
+.add-to-cart {
+  background-color: var(--bright-yellow-crayola);
+  color: var(--white);
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-4);
+  cursor: pointer;
+  font-size: var(--fs-6);
+  transition: background-color var(--transition-1);
+}
+
+.add-to-cart:hover {
+  background-color: var(--portland-orange);
+}
+
+
 
 /*-----------------------------------*\
   #HEADER

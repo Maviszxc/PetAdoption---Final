@@ -40,6 +40,12 @@ app.use("/api/v1/items", shopRoute);
 const loginRoute = require("./routes/loginRoute");
 app.use("/api/v1/login", loginRoute);
 
+const cartRoute = require("./routes/cartRoute");
+app.use("/api/v1/cart", cartRoute);
+
+const userRoute = require("./routes/userRoute");
+app.use("/api/v1/user", userRoute);
+
 
 app.listen(portNumber, () => {
   console.log(`server is running on http://localhost:${portNumber}`);

@@ -256,11 +256,42 @@ body {
 .grid-list {
   display: grid;
   gap: 30px;
+  margin-left: 20px;
+  margin-right: 100px;
 }
 
-.w-100 { width: 100%; }
+.w-100 {
+  width: 100%;
+}
 
+/*-----------------------------------*\
+  #PET ITEM STYLE
+\*-----------------------------------*/
 
+.shop-item {
+  border: 1px solid var(--silver-chalice);
+  border-radius: var(--radius-10);
+  padding: 16px;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+}
+
+.shop-item h3 {
+  font-size: var(--fs-4);
+  margin-bottom: 8px;
+  color: var(--eerie-black);
+}
+
+.shop-item p {
+  font-size: var(--fs-6);
+  margin: 4px 0;
+  color: var(--sonic-silver);
+}
 
 
 

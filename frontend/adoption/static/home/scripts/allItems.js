@@ -13,10 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Data received:", data);
       const itemList = document.getElementById("item-list");
 
-      // Clear any existing content in the item-list
       itemList.innerHTML = "";
 
-      // Check if data is not empty
       if (data.length === 0) {
         itemList.innerHTML = "<p>No item found.</p>";
         return;
@@ -31,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>Type: ${item.type}</p>
           <p>Cost: ${item.cost}</p>
           <p>Quantity: ${item.quantity}</p>
-          <img src="${item.image}" alt="${item.image}" />
+          <img src="${item.image}" alt="${item.item}" />
+          <button class="add-to-cart" data-item-id="${item.id}">Add to Cart</button>
         `;
         itemList.appendChild(shopItem);
       });

@@ -24,15 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       data.forEach((pet) => {
         const petItem = document.createElement("div");
-        petItem.classList.add("pet-item");
+        petItem.classList.add("shop-item");
         petItem.innerHTML = `
               <h3>${pet.breed}</h3>
+              <img src="${pet.image}" alt="${pet.breed}" />
               <p>Gender: ${pet.gender}</p>
               <p>Age: ${pet.age}</p>
               <p>Description: ${pet.description}</p>
               <p>Adopted: ${pet.isAdopted ? "Yes" : "No"}</p>
-              <img src="${pet.image}" alt="${pet.image}" />
-
             `;
         petList.appendChild(petItem);
       });

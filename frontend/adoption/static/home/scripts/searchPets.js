@@ -20,7 +20,7 @@ document.getElementById("search-button").addEventListener("click", function () {
       } else {
         data.forEach((pet) => {
           const petDiv = document.createElement("div");
-          petDiv.className = "pet";
+          petDiv.className = "shop-item";
           petDiv.innerHTML = `
             <h3>${pet.breed}</h3>
             <p>Gender: ${pet.gender}</p>

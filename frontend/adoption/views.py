@@ -41,3 +41,7 @@ def adminPet(request):
 def edit(request):
 
     return render(request, 'home/edit.html')
+
+def addCart(request):
+
+    return render(request, 'home/addCart.html')

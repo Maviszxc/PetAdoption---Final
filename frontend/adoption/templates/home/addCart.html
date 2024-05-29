@@ -29,7 +29,8 @@
     <!-- 
     - custom css link
   -->
-    <link rel="stylesheet" href="{% static 'home/css/pet.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/css/shop.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'home/css/gridlist.css' %}" /> -->
 
     <!-- 
     - google font link
@@ -92,7 +93,7 @@
             </li>
 
             <li class="navbar-item">
-              <a href="#" class="navbar-link" data-nav-link>Book</a>
+              <a href="" class="navbar-link" data-nav-link>Book</a>
             </li>
 
             
@@ -134,171 +135,48 @@
 
           <div>
             <h2 class="h2 section-title">
-              <span class="span">Pets</span> 
+              <span class="span">Your</span> Cart
             </h2>
           </div>
 
 
-        <!-- Fetch Pets -->
+        <!-- Fetch Items -->
 
-        <div>
-          <div id="search-display" class="grid-list"></div>
-          <div id="pet-list" class="grid-list"></div>
-        </div>
-
+        <!-- <div>
+          <div id="search-display" class="grid-lists"></div>
+          <div id="item-list" class="grid-lists" button="add to cart"></div>
+        </div> -->
 
         <!-- Search Pets -->
 
         
-          <div>
+          <!-- <div>
             <div id="search-display" class="grid-list"></div>
-            <div id="pet-list" class="grid-list"></div>
-          </div>
+          </div> -->
+
+        <!-- User Form
+          <div class="form-container">
+              <h2>User Information</h2>
+              <form id="user-form">
+                  <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" id="address" name="address" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="contactNumber">Contact Number:</label>
+                      <input type="text" id="contactNumber" name="contactNumber" required>
+                  </div>
+                  <div class="form-group">
+                      <button type="submit">Submit</button>
+                  </div>
+              </form>
+          </div> -->
 
         
-    
-        
-        <!-- 
-        - #CTA
-      -->
-
-        <section
-          class="cta has-bg-image"
-          aria-label="cta"
-          style="background-image: url('static/home/images/cta-bg.jpg')"
-        >
-          <div class="container">
-            <figure class="cta-banner">
-              <img
-                src="{% static 'home/images/cta-banner.png' %}"
-                width="900"
-                height="660"
-                loading="lazy"
-                alt="cat"
-                class="w-100"
-              />
-            </figure>
-
-            <div class="cta-content">
-              <img
-                src="{% static 'home/images/cta-icon.png' %}"
-                width="120"
-                height="35"
-                loading="lazy"
-                alt="taste guarantee"
-                class="img"
-              />
-
-              <h2 class="h2 section-title">
-                Taste it, love it or we’ll replace it… Guaranteed!
-              </h2>
-
-              <p class="section-text">
-                At Petio, we believe your dog and cat will love their food so
-                much that if they don’t … we’ll help you find a replacement.
-                That’s our taste guarantee.
-              </p>
-
-              <a href="#" class="btn">Find out more</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- 
-        - #BRAND
-      -->
-
-        <section class="section brand" aria-label="brand">
-          <div class="container">
-            <h2 class="h2 section-title">
-              <span class="span">Popular</span> Brands
-            </h2>
-
-            <ul class="has-scrollbar">
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-1.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-2.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-3.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-4.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-
-              <li class="scrollbar-item">
-                <div
-                  class="brand-card img-holder"
-                  style="--width: 150; --height: 150"
-                >
-                  <img
-                    src="{% static 'home/images/brand-5.jpg' %}"
-                    width="150"
-                    height="150"
-                    loading="lazy"
-                    alt="brand logo"
-                    class="img-cover"
-                  />
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </article>
-    </main>
 
     <!-- 
     - #FOOTER
@@ -494,7 +372,8 @@
   -->
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
-    <script src="{% static 'home/scripts/allPets.js' %}"></script>
+    <script src="{% static 'home/scripts/allItems.js' %}"></script>
+    
 
     <!-- 
     - ionicon link

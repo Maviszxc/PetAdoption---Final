@@ -30,6 +30,7 @@
     - custom css link
   -->
     <link rel="stylesheet" href="{% static 'home/css/index.css' %}" />
+    
 
     <!-- 
     - google font link
@@ -123,10 +124,10 @@
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           </a>
 
-          <button class="action-btn" aria-label="cart">
+          <a href="{% url 'addCart' %}" class="action-btn cart" aria-label="cart">
             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-
-            <span class="btn-badge">0</span>
+          </a>
+          
           </button>
         </div>
       </div>
