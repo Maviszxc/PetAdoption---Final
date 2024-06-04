@@ -166,9 +166,10 @@ body {
 
 .grid-lists {
   display: grid;
-  margin-left: 20px;
-  margin-right: -70px;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 15px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .shop-item {

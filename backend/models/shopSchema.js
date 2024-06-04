@@ -1,27 +1,25 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-
-const shopDocument = new Schema({
+const shopSchema = new mongoose.Schema({
   item: {
     type: String,
-    required: [true, "Item name is needed"],
+    required: true,
   },
   description: {
     type: String,
-    required: [true, "Description is needed"],
+    required: true,
   },
   type: {
     type: String,
-    required: [true, "Type is required"],
+    required: true,
   },
   cost: {
-    type: String,
-    required: [true, "Cost is required"],
+    type: Number,
+    required: true,
   },
   quantity: {
     type: Number,
-    required: [true, "Quantity is needed"],
+    required: true,
   },
   isSold: {
     type: Boolean,
@@ -29,9 +27,8 @@ const shopDocument = new Schema({
   },
   image: {
     type: String,
-    required: [true, "Image is needed"],
+    required: true,
   },
 });
 
-const Shop = mongoose.model("Shop", shopDocument);
-module.exports = Shop;
+module.exports = mongoose.model("Shop", shopSchema);

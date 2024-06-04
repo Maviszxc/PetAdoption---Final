@@ -1156,6 +1156,26 @@ body {
     font-size: 20px;
 }
 
+/* Additional CSS for date and time input fields */
+
+input[type="date"],
+input[type="time"] {
+  color: var(--portland-orange); /* Or use the hex code: #e95b22 */
+}
+
+/* This ensures that the placeholder color is also changed */
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+  color: var(--portland-orange);
+}
+
+/* To change the color when the input is focused */
+input[type="date"]:focus,
+input[type="time"]:focus {
+  color: var(--portland-orange);
+}
+
+
 .file-input-box {
     height: auto;
 }

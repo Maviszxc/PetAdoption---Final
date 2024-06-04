@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 
-    - primary meta tag
-    -->
+    <!--- primary meta tag -->
     <title>Kitter - High Quality Pet Food</title>
     <meta name="title" content="Kitter - High Quality Pet Food" />
     <meta
@@ -17,23 +15,17 @@
       content="This is an eCommerce html template made by codewithsadee"
     />
 
-    <!-- 
-    - favicon
-    -->
+    <!--- favicon -->
     <link
       rel="shortcut icon"
       href="{% static 'favicon.svg' %}"
       type="image/svg+xml"
     />
 
-    <!-- 
-    - custom css link
-    -->
+    <!--- custom css link -->
     <link rel="stylesheet" href="{% static 'home/css/edit.css' %}" />
 
-    <!-- 
-    - google font link
-    -->
+    <!--- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,10 +35,7 @@
   </head>
 
   <body id="top">
-    <!-- 
-    - #HEADER
-    -->
-
+    <!--- #HEADER-->
     <header class="header" data-header>
       <div class="container">
         <button
@@ -78,23 +67,21 @@
                 >Dashboard</a
               >
             </li>
-
             <li class="navbar-item">
               <a href="{% url 'adminShop' %}" class="navbar-link" data-nav-link
                 >Shop</a
               >
             </li>
-
             <li class="navbar-item">
               <a href="{% url 'adminPet' %}" class="navbar-link" data-nav-link
                 >Pets</a
               >
             </li>
-
-            <li class="navbar-item">
-              <a href="" class="navbar-link" data-nav-link>Book</a>
-            </li>
-
+            <!-- <li class="navbar-item">
+              <a href="{% url 'adminBook' %}" class="navbar-link" data-nav-link
+                >Book</a
+              >
+            </li> -->
             <li class="navbar-item">
               <a href="#" class="navbar-link" data-nav-link>Edit</a>
             </li>
@@ -125,7 +112,7 @@
 
           <button class="action-btn" aria-label="cart">
             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-
+            <span class="btn-badge">0</span>
           </button>
         </div>
       </div>
@@ -133,19 +120,13 @@
 
     <main>
       <article>
-        <!-- 
-        - #HERO
-        -->
-
+        <!--- #HERO -->
         <!-- Search Pets -->
         <div>
           <div id="search-display" class="grid-list"></div>
         </div>
 
-        <!-- 
-        - #BRAND
-        -->
-
+        <!--- #BRAND -->
         <!-- CRUD for Pets -->
         <section class="section brand" aria-label="brand">
           <div class="container">
@@ -168,7 +149,6 @@
                     />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -179,7 +159,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -190,7 +169,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -201,7 +179,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box file-input-box">
                     <input
                       type="file"
@@ -212,7 +189,6 @@
                     />
                     <i class="bx bxs-image"></i>
                   </div>
-
                   <button type="submit" class="add-btn">Add New Pet</button>
                 </form>
                 <div id="message" class="message"></div>
@@ -232,7 +208,6 @@
                     />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -243,7 +218,6 @@
                     />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -254,7 +228,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -265,7 +238,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
                     <input
                       type="text"
@@ -276,7 +248,6 @@
                     />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box checkbox-wrapper">
                     <label for="update-is-adopted">Is Adopted:</label>
                     <input
@@ -285,7 +256,6 @@
                       name="is-adopted"
                     />
                   </div>
-
                   <button type="submit" class="add-btn">Update Pet</button>
                 </form>
                 <div id="update-message" class="message"></div>
@@ -325,92 +295,161 @@
             <div class="wrapper-grid">
               <!-- Add Item -->
               <div class="wrapper">
-                <form action="">
+                <form id="add-item-form" enctype="multipart/form-data">
                   <h1>Add Item</h1>
                   <div class="input-box">
-                    <input type="text" placeholder="Item" required />
+                    <input
+                      type="text"
+                      id="item"
+                      name="item"
+                      placeholder="Item"
+                      required
+                    />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Description" required />
+                    <input
+                      type="text"
+                      id="description"
+                      name="description"
+                      placeholder="Description"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Type" required />
+                    <input
+                      type="text"
+                      id="type"
+                      name="type"
+                      placeholder="Type"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Cost" required />
+                    <input
+                      type="text"
+                      id="cost"
+                      name="cost"
+                      placeholder="Cost"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Quantity" required />
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      placeholder="Quantity"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box file-input-box">
-                    <input type="file" placeholder="Upload Image" required />
+                    <input
+                      type="file"
+                      id="image"
+                      name="image"
+                      accept="image/*"
+                      required
+                    />
                     <i class="bx bxs-image"></i>
                   </div>
-
-                  <button type="submit" class="add-btn">Submit</button>
+                  <button type="submit" class="add-btn">Add New Item</button>
                 </form>
+                <div id="item-message" class="message"></div>
               </div>
 
               <!-- Update Item -->
               <div class="wrapper">
-                <form action="">
+                <form id="update-item-form">
                   <h1>Update Item</h1>
                   <div class="input-box">
-                    <input type="text" placeholder="Item ID" required />
+                    <input
+                      type="text"
+                      id="update-item-id"
+                      name="item-id"
+                      placeholder="Item ID"
+                      required
+                    />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Item" required />
+                    <input
+                      type="text"
+                      id="update-item"
+                      name="item"
+                      placeholder="Item"
+                      required
+                    />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Description" required />
+                    <input
+                      type="text"
+                      id="update-description"
+                      name="description"
+                      placeholder="Description"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Type" required />
+                    <input
+                      type="text"
+                      id="update-type"
+                      name="type"
+                      placeholder="Type"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Cost" required />
+                    <input
+                      type="text"
+                      id="update-cost"
+                      name="cost"
+                      placeholder="Cost"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Quantity" required />
+                    <input
+                      type="number"
+                      id="update-quantity"
+                      name="quantity"
+                      placeholder="Quantity"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
-                  <button type="submit" class="add-btn">Submit</button>
+                  <button type="submit" class="add-btn">Update Item</button>
                 </form>
+                <div id="update-item-message" class="message"></div>
               </div>
 
               <!-- Delete Item -->
               <div class="wrapper">
-                <form action="">
+                <div class="delete-item-form">
                   <h1>Delete Item</h1>
-
-                  <div class="input-box">
-                    <input type="text" placeholder="Item ID" required />
-                    <i class="bx bxs-user"></i>
-                  </div>
-
-                  <button type="submit" class="add-btn">Submit</button>
-                </form>
+                  <form id="delete-item-form">
+                    <div class="input-box">
+                      <input
+                        type="text"
+                        id="delete-item-id"
+                        name="delete-item-id"
+                        placeholder="Item ID"
+                        required
+                      />
+                      <i class="bx bxs-user"></i>
+                    </div>
+                    <button type="submit" class="add-btn">Delete Item</button>
+                  </form>
+                  <div id="delete-item-message" class="message"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -425,54 +464,153 @@
 
             <div class="wrapper-grid">
               <div class="wrapper">
-                <form action="">
-                  <h1>Update Item</h1>
+                <form id="add-booking-form">
+                  <h1>Add Booking</h1>
                   <div class="input-box">
-                    <input type="text" placeholder="Item ID" required />
+                    <input
+                      type="text"
+                      id="fname"
+                      name="fname"
+                      placeholder="First Name"
+                      required
+                    />
                     <i class="bx bxs-user"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Item" required />
-                    <i class="bx bxs-user"></i>
-                  </div>
-
-                  <div class="input-box">
-                    <input type="text" placeholder="Description" required />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Type" required />
+                    <input
+                      type="date"
+                      id="date"
+                      name="date"
+                      placeholder="Date"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Cost" required />
+                    <input
+                      type="time"
+                      id="time"
+                      name="time"
+                      placeholder="Time"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
                   <div class="input-box">
-                    <input type="text" placeholder="Quantity" required />
+                    <input
+                      type="text"
+                      id="message"
+                      name="message"
+                      placeholder="Message"
+                      required
+                    />
                     <i class="bx bxs-lock-alt"></i>
                   </div>
-
-                  <button type="submit" class="add-btn">Submit</button>
+                  <button type="submit" class="add-btn">Add Booking</button>
                 </form>
+                <div id="booking-message" class="message"></div>
               </div>
 
-              <!-- Delete Item -->
+              <!-- Update Booking -->
               <div class="wrapper">
-                <form action="">
-                  <h1>Delete Item</h1>
-
+                <form id="update-booking-form">
+                  <h1>Update Booking</h1>
                   <div class="input-box">
-                    <input type="text" placeholder="Item ID" required />
+                    <input
+                      type="text"
+                      id="update-booking-id"
+                      name="booking-id"
+                      placeholder="Booking ID"
+                      required
+                    />
                     <i class="bx bxs-user"></i>
                   </div>
-
-                  <button type="submit" class="add-btn">Submit</button>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-fname"
+                      name="fname"
+                      placeholder="First Name"
+                      required
+                    />
+                    <i class="bx bxs-user"></i>
+                  </div>
+                  <div class="input-box">
+                    <input
+                      type="email"
+                      id="update-email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <div class="input-box">
+                    <input
+                      type="date"
+                      id="update-date"
+                      name="date"
+                      placeholder="Date"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <div class="input-box">
+                    <input
+                      type="time"
+                      id="update-time"
+                      name="time"
+                      placeholder="Time"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      id="update-message"
+                      name="message"
+                      placeholder="Message"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <button type="submit" class="add-btn">Update Booking</button>
                 </form>
+                <div id="update-booking-message" class="message"></div>
+              </div>
+
+              <!-- Delete Booking -->
+              <div class="wrapper">
+                <div class="delete-booking-form">
+                  <h1>Delete Booking</h1>
+                  <form id="delete-booking-form">
+                    <div class="input-box">
+                      <input
+                        type="text"
+                        id="delete-booking-id"
+                        name="delete-booking-id"
+                        placeholder="Booking ID"
+                        required
+                      />
+                      <i class="bx bxs-user"></i>
+                    </div>
+                    <button type="submit" class="add-btn">
+                      Delete Booking
+                    </button>
+                  </form>
+                  <div id="delete-booking-message" class="message"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -480,10 +618,7 @@
       </article>
     </main>
 
-    <!-- 
-    - #FOOTER
-    -->
-
+    <!--- #FOOTER -->
     <footer
       class="footer"
       style="background-image: url(static/home/images/footer-bg.jpg)"
@@ -503,15 +638,12 @@
             <ul class="contact-list">
               <li class="contact-item">
                 <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
-
                 <address class="address">
                   30 Buttonwood St.Pataskala OH 43062
                 </address>
               </li>
-
               <li class="contact-item">
                 <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-
                 <a href="tel:+16234567891011" class="contact-link"
                   >(+1)-6234-56-789-1011</a
                 >
@@ -524,19 +656,16 @@
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-pinterest"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-instagram"></ion-icon>
@@ -549,90 +678,36 @@
             <li>
               <p class="footer-list-title">Corporate</p>
             </li>
-
-            <li>
-              <a href="#" class="footer-link">Careers</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">About Us</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Contact Us</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">FAQs</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Vendors</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Affiliate Program</a>
-            </li>
+            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Contact Us</a></li>
+            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#" class="footer-link">Vendors</a></li>
+            <li><a href="#" class="footer-link">Affiliate Program</a></li>
           </ul>
 
           <ul class="footer-list">
             <li>
               <p class="footer-list-title">Information</p>
             </li>
-
-            <li>
-              <a href="#" class="footer-link">Online Store</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Privacy Policy</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Refund Policy</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Shipping Policy</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Terms of Service</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Track Order</a>
-            </li>
+            <li><a href="#" class="footer-link">Online Store</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Refund Policy</a></li>
+            <li><a href="#" class="footer-link">Shipping Policy</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+            <li><a href="#" class="footer-link">Track Order</a></li>
           </ul>
 
           <ul class="footer-list">
             <li>
               <p class="footer-list-title">Services</p>
             </li>
-
-            <li>
-              <a href="#" class="footer-link">Grooming</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Positive Dog Training</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Veterinary Services</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Petco Insurance</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Pet Adoption</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link">Resource Center</a>
-            </li>
+            <li><a href="#" class="footer-link">Grooming</a></li>
+            <li><a href="#" class="footer-link">Positive Dog Training</a></li>
+            <li><a href="#" class="footer-link">Veterinary Services</a></li>
+            <li><a href="#" class="footer-link">Petco Insurance</a></li>
+            <li><a href="#" class="footer-link">Pet Adoption</a></li>
+            <li><a href="#" class="footer-link">Resource Center</a></li>
           </ul>
         </div>
       </div>
@@ -656,10 +731,7 @@
       </div>
     </footer>
 
-    <!-- 
-    - #BACK TO TOP
-    -->
-
+    <!--- #BACK TO TOP-->
     <a
       href="#top"
       class="back-top-btn"
@@ -669,19 +741,21 @@
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
 
-    <!-- 
-    - custom js link
-    -->
+    <!-- custom js link -->
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
     <script src="{% static 'home/scripts/allPets.js' %}"></script>
     <script src="{% static 'home/scripts/CRUDPets/createPets.js' %}"></script>
     <script src="{% static 'home/scripts/CRUDPets/updatePets.js' %}"></script>
     <script src="{% static 'home/scripts/CRUDPets/deletePets.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDShop/createItem.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDShop/updateItem.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDShop/deleteItem.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDBookings/createBooking.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDBookings/updateBooking.js' %}"></script>
+    <script src="{% static 'home/scripts/CRUDBookings/deleteBooking.js' %}"></script>
 
-    <!-- 
-    - ionicon link
-    -->
+    <!--- ionicon link -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -690,5 +764,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+   
   </body>
 </html>

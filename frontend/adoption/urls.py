@@ -13,4 +13,7 @@ urlpatterns = [
     path('adminPet', views.adminPet, name='adminPet'),
     path('edit', views.edit, name='edit'),
     path('addCart', views.addCart, name='addCart'),
+    path('book', views.book, name='book'),
+    path('create-booking', views.create_booking, name='create_booking'),
+    path('adminBook', views.adminBook, name='adminBook'), 
 ]

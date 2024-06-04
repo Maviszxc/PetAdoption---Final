@@ -16,23 +16,13 @@ const loginSchema = new Schema({
     type: String,
     required: [true, "Hint is required"],
   },
-  active: {
+  isAdmin: {
     type: Boolean,
     default: true,
   },
 });
 
-loginSchema.pre("save", function (next) {
-  if (this.isModified("password")) {
-    bcrypt.hash(this.password, 10, (err, hashedPassword) => {
-      if (err) return next(err);
-      this.password = hashedPassword;
-      next();
-    });
-  } else {
-    next();
-  }
-});
+
 
 const Login = mongoose.model("Login", loginSchema);
 module.exports = Login;

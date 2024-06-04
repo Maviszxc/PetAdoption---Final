@@ -9,70 +9,69 @@
 
     <!-- 
     - primary meta tag
-  -->
-    <title>Kitter - Hight Quality Pet Food</title>
-    <meta name="title" content="Kitter - Hight Quality Pet Food" />
-    <meta
-      name="description"
-      content="This is an eCommerce html template made by codewithsadee"
-    />
+    -->
+    <title>Kitter - High Quality Pet Food</title>
+    <meta name="title" content="Kitter - High Quality Pet Food" />
+    <meta name="description" content="This is an eCommerce html template made by codewithsadee" />
 
     <!-- 
     - favicon
-  -->
-    <link
-      rel="shortcut icon"
-      href="{% static 'favicon.svg' %}"
-      type="image/svg+xml"
-    />
+    -->
+    <link rel="shortcut icon" href="{% static 'favicon.svg' %}" type="image/svg+xml" />
 
     <!-- 
     - custom css link
-  -->
+    -->
     <link rel="stylesheet" href="{% static 'home/css/adminDashboard.css' %}" />
 
     <!-- 
     - google font link
-  -->
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- 
     - preload images
-  -->
-    <link
-      rel="preload"
-      as="image"
-      href="{% static 'home/images/hero-banner.jpg' %}"
-    />
+    -->
+    <link rel="preload" as="image" href="{% static 'home/images/hero-banner.jpg' %}" />
+    
+    <style>
+      /* Add these styles to adminDashboard.css */
+      .booking-item {
+        background-color: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: var(--radius-4);
+        padding: 20px;
+        box-shadow: var(--shadow-1);
+        transition: var(--transition-1);
+        margin-bottom: 20px; /* Add some space between items */
+      }
+
+      .booking-item h3 {
+        color: var(--portland-orange);
+        font-size: var(--fs-4);
+        margin-bottom: 10px;
+      }
+
+      .booking-item p {
+        color: var(--sonic-silver);
+        font-size: var(--fs-6);
+        margin-bottom: 5px;
+      }
+    </style>
   </head>
 
   <body id="top">
     <!-- 
     - #HEADER
-  -->
+    -->
 
     <header class="header" data-header>
       <div class="container">
-        <button
-          class="nav-toggle-btn"
-          aria-label="toggle manu"
-          data-nav-toggler
-        >
-          <ion-icon
-            name="menu-outline"
-            aria-hidden="true"
-            class="menu-icon"
-          ></ion-icon>
-          <ion-icon
-            name="close-outline"
-            aria-label="true"
-            class="close-icon"
-          ></ion-icon>
+        <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true" class="menu-icon"></ion-icon>
+          <ion-icon name="close-outline" aria-label="true" class="close-icon"></ion-icon>
         </button>
 
         <a href="#" class="logo">Admin</a>
@@ -84,36 +83,21 @@
             </li>
 
             <li class="navbar-item">
-              <a href="{% url 'adminShop' %}" class="navbar-link" data-nav-link
-                >Shop</a
-              >
-        +    </li>
-
-            <li class="navbar-item">
-              <a href="{% url 'adminPet' %}" class="navbar-link" data-nav-link
-                >Pets</a
-              >
+              <a href="{% url 'adminShop' %}" class="navbar-link" data-nav-link>Shop</a>
             </li>
 
             <li class="navbar-item">
-              <a href="#" class="navbar-link" data-nav-link
-                >Book</a
-              >
+              <a href="{% url 'adminPet' %}" class="navbar-link" data-nav-link>Pets</a>
             </li>
 
+            <!-- <li class="navbar-item">
+              <a href="{% url 'adminBook' %}" class="navbar-link" data-nav-link>Book</a>
+            </li> -->
 
             <li class="navbar-item">
               <a href="{% url 'edit' %}" class="navbar-link" data-nav-link>Edit</a>
             </li>
-
-
           </ul>
-
-            
-
-            
-
-          
 
           <a href="#" class="navbar-action-btn">Log In</a>
         </nav>
@@ -124,23 +108,18 @@
           </button>
           <div class="search-box">
             <div class="search-container">
-              <input
-                type="text"
-                id="breed-search"
-                placeholder="Search..."
-                class="search-input"
-              />
+              <input type="text" id="breed-search" placeholder="Search..." class="search-input" />
               <button id="search-button" class="search-button">Submit</button>
             </div>
           </div>
 
-          <a href="{% url 'login' %}" class="action-btn user" aria-label="User">
+          <a href="{% url 'home' %}" class="action-btn user" aria-label="User">
             <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
           </a>
 
           <button class="action-btn" aria-label="cart">
             <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-
+            <span class="btn-badge">0</span>
           </button>
         </div>
       </div>
@@ -151,24 +130,17 @@
 
         <!-- 
         - #HERO
-      -->
+        -->
 
-        <!-- <section
-          class="section hero has-bg-image"
-          id="home"
-          aria-label="home"
-          style="background-image: url('static/home/images/hero-banner.jpg')"
-        >
+        <!-- <section class="section hero has-bg-image" id="home" aria-label="home" style="background-image: url('static/home/images/hero-banner.jpg')">
           <div class="container">
             <h1 class="h1 hero-title">
               <span class="span">High Quality</span> Pet Food
             </h1>
-
             <p class="hero-text">Sale up to 40% off today</p>
-
             <a href="#" class="btn">Shop Now</a>
-          </div> -->
-        </section>
+          </div>
+        </section> -->
 
         <!-- Fetch Pets -->
 
@@ -182,89 +154,75 @@
           <div id="search-display" class="grid-list"></div>
         </div>
 
-       
-
         <!-- 
         - #BRAND
-      -->
+        -->
 
-      <!-- Weekly Sales -->
+        <!-- Weekly Sales -->
 
         <section class="section brand" aria-label="brand">
           <div class="container">
             <h2 class="h2 section-title">
               <span class="span">Shop's</span> Weekly Sales
             </h2>
+          </div>
+        </section>
 
-      <!-- Bookings -->
+        <!-- Bookings -->
 
-      <section class="section brand" aria-label="brand">
+        <section class="section brand" aria-label="brand">
           <div class="container">
             <h2 class="h2 section-title">
               <span class="span">All</span> Bookings
             </h2>
+            <div id="booking-list" class="grid-list">
+              <!-- Bookings will be dynamically added here -->
+            </div>
+          </div>
+        </section>
 
-            
       </article>
     </main>
 
     <!-- 
     - #FOOTER
-  -->
+    -->
 
-    <footer
-      class="footer"
-      style="background-image: url('static/home/images/footer-bg.jpg')"
-    >
+    <footer class="footer" style="background-image: url('static/home/images/footer-bg.jpg')">
       <div class="footer-top section">
         <div class="container">
           <div class="footer-brand">
             <a href="#" class="logo">Kitter</a>
-
             <p class="footer-text">
               If you have any question, please contact us at
-              <a href="mailto:support@gmail.com" class="link"
-                >support@gmail.com</a
-              >
+              <a href="mailto:support@gmail.com" class="link">support@gmail.com</a>
             </p>
-
             <ul class="contact-list">
               <li class="contact-item">
                 <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
-
-                <address class="address">
-                  30 Buttonwood St.Pataskala OH 43062
-                </address>
+                <address class="address">30 Buttonwood St. Pataskala OH 43062</address>
               </li>
-
               <li class="contact-item">
                 <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-
-                <a href="tel:+16234567891011" class="contact-link"
-                  >(+1)-6234-56-789-1011</a
-                >
+                <a href="tel:+16234567891011" class="contact-link">(+1)-6234-56-789-1011</a>
               </li>
             </ul>
-
             <ul class="social-list">
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-pinterest"></ion-icon>
                 </a>
               </li>
-
               <li>
                 <a href="#" class="social-link">
                   <ion-icon name="logo-instagram"></ion-icon>
@@ -277,27 +235,21 @@
             <li>
               <p class="footer-list-title">Corporate</p>
             </li>
-
             <li>
               <a href="#" class="footer-link">Careers</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">About Us</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Contact Us</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">FAQs</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Vendors</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Affiliate Program</a>
             </li>
@@ -307,27 +259,21 @@
             <li>
               <p class="footer-list-title">Information</p>
             </li>
-
             <li>
               <a href="#" class="footer-link">Online Store</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Privacy Policy</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Refund Policy</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Shipping Policy</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Terms of Service</a>
             </li>
-
             <li>
               <a href="#" class="footer-link">Track Order</a>
             </li>
@@ -371,49 +317,68 @@
             &copy; 2022 Made with ♥ by
             <a href="#" class="copyright-link">codewithsadee.</a>
           </p>
-
-          <img
-            src="{% static 'home/images/payment.png' %}"
-            width="397"
-            height="32"
-            loading="lazy"
-            alt="payment method"
-            class="img"
-          />
+          <img src="{% static 'home/images/payment.png' %}" width="397" height="32" loading="lazy" alt="payment method" class="img" />
         </div>
       </div>
     </footer>
 
     <!-- 
     - #BACK TO TOP
-  -->
-
-    <a
-      href="#top"
-      class="back-top-btn"
-      aria-label="back to top"
-      data-back-top-btn
-    >
+    -->
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
       <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
     </a>
 
     <!-- 
     - custom js link
-  -->
+    -->
     <script src="{% static 'home/scripts/script.js' %}" defer></script>
     <script src="{% static 'home/scripts/searchPets.js' %}"></script>
     <script src="{% static 'home/scripts/allPets.js' %}"></script>
 
     <!-- 
     - ionicon link
-  -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Fetch and display bookings -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch("http://localhost:4000/api/v1/book")
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(bookings => {
+            const bookingList = document.getElementById("booking-list");
+            bookingList.innerHTML = "";
+            if (bookings.length === 0) {
+              bookingList.innerHTML = "<p>No bookings found.</p>";
+              return;
+            }
+            bookings.forEach(booking => {
+              const bookingItem = document.createElement("div");
+              bookingItem.classList.add("booking-item");
+              bookingItem.innerHTML = `
+                <h3>${booking.fname}</h3>
+                <p>Email: ${booking.email}</p>
+                <p>Date: ${new Date(booking.date).toLocaleDateString()}</p>
+                <p>Time: ${booking.time}</p>
+                <p>Message: ${booking.message}</p>
+              `;
+              bookingList.appendChild(bookingItem);
+            });
+          })
+          .catch(error => {
+            console.error("Error fetching bookings:", error);
+            const bookingList = document.getElementById("booking-list");
+            bookingList.innerHTML = `<p>Error fetching bookings: ${error.message}</p>`;
+          });
+      });
+    </script>
+    
   </body>
 </html>

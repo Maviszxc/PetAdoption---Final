@@ -37,6 +37,9 @@ app.use("/api/v1/pets", petRoute);
 const shopRoute = require("./routes/shopRoute");
 app.use("/api/v1/items", shopRoute);
 
+const bookRoute = require("./routes/bookRoute");
+app.use("/api/v1/book", bookRoute);
+
 const loginRoute = require("./routes/loginRoute");
 app.use("/api/v1/login", loginRoute);
 
